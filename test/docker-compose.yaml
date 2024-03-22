@@ -14,8 +14,9 @@ services:
     command: server --console-address ":9001" /data
 
 
-  minio:
-    image: minio/minio
+  server:
+    dockerfile:
+    bui: 
     ports:
       - "9000:9000"
       - "9001:9001"

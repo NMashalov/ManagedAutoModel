@@ -9,7 +9,8 @@ class S3StorageConfigs(Enum):
 
 class S3Manager:
     def __init__(self,
-            token: tp.Optional[str]):
+            token: tp.Optional[str]
+        ):
         '''
         Token allows
         '''
@@ -20,6 +21,12 @@ class S3Manager:
         )
 
         self.bucket = S3StorageConfigs.s3_bucket
+
+    @classmethod
+    def from_environs(cls):
+        
+
+    
         
     @classmethod
     def register_from_cache(self):

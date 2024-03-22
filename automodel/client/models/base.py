@@ -1,11 +1,12 @@
 import abc
 import s3fs
+from dataclasses import dataclass
+import requests
 
 class AbstractModelConfig(abc.ABC):
     pass
 
-
-class AbstractModel:
+class ReceievedModel:
 
     @classmethod
     def from_configs(cls,model_name:str):
@@ -15,10 +16,6 @@ class AbstractModel:
 
     @abc.abstractmethod
     def storage_format():
-        pass
-    
-    @abc.abstractmethod
-    def push_to_hub(self):
         pass
 
     @abc.abstractmethod
