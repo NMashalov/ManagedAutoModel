@@ -1,8 +1,9 @@
 import typing as tp
+import fastapi
 
 class ServerManager:
     def __init__(self, cfg :ServerConfigs):
-        self.app = fastapi.FastAPI()
+        
         self.oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
         
     def security(self):

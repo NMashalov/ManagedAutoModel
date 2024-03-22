@@ -1,7 +1,7 @@
 import abc
-import s3fs
+
 from dataclasses import dataclass
-import requests
+
 
 class AbstractModelConfig(abc.ABC):
     pass

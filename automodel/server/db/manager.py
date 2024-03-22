@@ -1,33 +1,28 @@
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.engine import create_engine
 from .models import User, Model
+from .crud import UserCRUD,ModelCRUD
+from dataclasses import dataclass
 
-class UserCRUD:
-    def add_user(self,user):
-       with self.session_maker() as session:
-           session.add()  
-
-
-class ModelCRUD:
-    def __init__(self,session: Session):
-        self.session 
-    def create_model(self,model):
-        self.session.add(
-            Model()
-        )  
- 
 
 class CRUD:
-    def __init__(self, user_crud:UserCRUD, model_crud:ModelCRUD):
-        self.user_crud = user_crud
-        self.model_crud = model_crud
+    def __init__(self, session: Session):
+        self.user_crud = UserCRUD(session=session)
+        self.model_crud = ModelCRUD(session=session)
+ 
 
-    def 
+@dataclass
+class AlchemyManagerCfg:
+   db_url: str
+   db_username: str
+   db_password: str
 
 
 class AlchemyDbManager:
-    def __init__(self,connection):
-        engine = create_engine
+    def __init__(self,cfg:AlchemyManagerCfg):
+        self.settings = cfg
+        engine = create_engine(cfg.db_url)
         self.session_maker = sessionmaker(bind=engine)
+        self.crud=CRUD(session=self.session_maker())
 
     

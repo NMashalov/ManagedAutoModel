@@ -1,6 +1,6 @@
 from sklearn.datasets import load_diabetes
 import catboost
-from automodel
+from automodel.
 import pytest
 
 

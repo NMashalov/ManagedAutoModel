@@ -27,7 +27,7 @@ class ServerConfigs:
 
 class Server:
     def __init__(self):
-
+        pass
 
     def security(self):
         @self.app.post("/token")

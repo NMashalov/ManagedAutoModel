@@ -8,8 +8,6 @@ class CatboostAutoModel:
         self.feature_list = features
     
 
-    
-
     @classmethod
     def from_pretrained(self,conifg_name:str| Path):
         '''
